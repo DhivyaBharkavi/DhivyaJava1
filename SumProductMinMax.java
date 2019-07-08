@@ -1,4 +1,6 @@
 package exercise8july19;
+/*Write a program called SumProductMaxMin the prompts uses for 3 integers. 
+The program shall read the input as int: compute sum, product, minimum and maximum of 3 Integers and print the result.*/
 
 import java.util.Scanner;
 
