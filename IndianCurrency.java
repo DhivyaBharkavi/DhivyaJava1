@@ -15,7 +15,7 @@ public class IndianCurrency {
 	}
 	void currency()
 	{
-		if(country=="American")
+		if(country.equals("American"))
 		{
 			System.out.println("American currency to Indian currency "+amount*0.1487);
 		}
