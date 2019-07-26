@@ -1,4 +1,4 @@
-package javaSamples;
+package exercise26jyly19;
 
 public class SumOfDigitTest {
 
@@ -6,8 +6,12 @@ public class SumOfDigitTest {
 		// TODO Auto-generated method stub
 		SumOfDigit s = new SumOfDigit();
 		s.getInput();
-		s.sumofDigit();
-		s.sumofDigit1();
+	
+		s.reverse();
+		
+		s.sumOfDigit();
+		
+		s.display();
 	}
 
 }

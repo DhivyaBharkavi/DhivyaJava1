@@ -1,40 +1,33 @@
-package divyaday1.pratice;
+package exercise26jyly19;
 
 import java.util.Scanner;
 
 public class Odd {
-	int num,result,i;
-	void getInput()
+	private int i;
+	private int[] numbers = new int[5];
+	Scanner scan = new Scanner(System.in);
+	public void getInput()
 	{
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter a number ");
-		num=scan.nextInt();
-	}
-	void display()
-	{
-		System.out.println("The odd numbers are ");
-		for (i=1;i<=num;i++)
+		for(i=0;i<5;i++)
 		{
-			System.out.println(2 * i -1);
+		System.out.println("Enter a numbers "+i);
+		numbers[i]=scan.nextInt();
 		}
-		
 	}
-	void display1()
+	public void findOdd()
 	{
-		System.out.println("The odd numbers are ");
-		for (i=1;i<=num;i=i+2)
+		int count=0;
+		System.out.println("================================");
+		System.out.println("Find odd numbers in given array ");
+		System.out.println("================================");
+		for(i=0;i<5;i++)
 		{
-			System.out.println(i);
+			if(numbers[i]%2!=0)
+			{
+				count++;
+				System.out.println("Odd numbers are "+numbers[i]+" then position is "+i);
+			}
 		}
-		
-	}
-	void display2()
-	{
-		System.out.println("The odd numbers are ");
-		for (i=1;i<=num;i++)
-		{
-			System.out.println(2 * i + 1);
-		}
-		
+		System.out.println("Numbers of times of odd numbers is "+count);
 	}
 }

@@ -1,48 +1,66 @@
-package javaSamples;
+package exercise26jyly19;
 
 import java.util.Scanner;
 
 public class SumOfDigit {
-private int n,sum=0;
-Scanner scan = new Scanner(System.in);
-public void getInput()
-{
-	System.out.println("Enter n value");
-	n=scan.nextInt();
-}
-public int sumofDigit()
-{
-	int sum1=0;
-	int count=0;
-	while(n>0)
+	private int i;
+	private int[] numbers = new int[5];
+	private int[] sum = new int[5];
+	private int[] reverse = new int[5];
+	Scanner scan = new Scanner(System.in);
+	public void getInput()
 	{
-		int re=n%10;
-		n++;
-		n=n/10;
-		sum=sum+re;
-		sum1=sum1+1;
-		//System.out.println(n+" is Digit");
+		for(i=0;i<5;i++)
+		{
+		System.out.println("Enter a numbers "+i);
+		numbers[i]=scan.nextInt();
+		sum[i]=numbers[i];
+		reverse[i]=numbers[i];
+		}
+		
 	}
-	System.out.println(+sum1+ "  digit");
-	System.out.println("Sum is "+sum);
-	return sum;
-}
-public void sumofDigit1()
-{
-	SumOfDigit s = new SumOfDigit();
-	s.sumofDigit();
-	int sum1=0;
-	int count=0;
-	while(sum>0)
+	public void reverse()
 	{
-		int re=sum%10;
-		sum++;
-		sum=sum/10;
-		sum1=sum1+re;
-		count=count+1;
-		//System.out.println(n+" is Digit");
+		for(i=0;i<5;i++)
+		{
+			int sum2=0,rev=0;
+			//while(reverse[i]>0)
+			for(int j=1;j<=numbers[i];j++)
+			{
+				rev=numbers[i]%10;
+				
+				rev=rev*10+numbers[i]/10;
+				
+				sum2=sum2+rev;
+			}
+			reverse[i]=rev;
+			//System.out.println("Sum2 "+sum2+" rev "+rev+" reverse "+reverse[i]);
+			//System.out.println("Reverse numbers is "+reverse[i]);
+		}
+	
+	
+	
 	}
-	System.out.println(+count+ "  digit");
-	System.out.println("Sum is "+sum1);
-}
+	public void sumOfDigit()
+	{	
+		for(i=0;i<5;i++)
+		{
+		int sum1=0;			
+			while(sum[i]>0)
+			{
+				int result=sum[i]%10;
+				sum1=sum1+result;
+				sum[i]=sum[i]/10;
+			}
+			System.out.println("Sum of digit is "+sum1);
+			sum[i]=sum1;
+		}			
+	}
+	public void display()
+	{
+		for(i=0;i<5;i++)
+		{
+			System.out.println("Given array ["+numbers[i]+"] Sum of digit ["+sum[i]+"] Reverse numbers in array ["+reverse[i]+"]");
+		}
+	}
 }
